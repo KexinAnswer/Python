@@ -211,73 +211,141 @@ print(a)
 #  print(y)
 #
 
+# 循环打印 1 = 10
+# for
+#begin, end= input('Enter num: ').split()
+#begin =int (begin)
+#end =int (end)
+#print(type(begin))
+#print(type(end))
+#for i in range(begin, end+1):
+#    print(i, end=' ')
 
-import turtle
+# while
+#i = begin
+#while i <= end:
+#    print(i, end=' ')
+#    i += 1
 
-def draw_rectange(x,y,width,height):
-    '''绘制矩形'''
-    turtle.goto(x,y)
-    turtle.pencolor('red')
-    turtle.fillcolor('red')
-    turtle.begin_fill()
-    for i in range(2):
-        turtle.forward(width)
-        turtle.left(90)
-        turtle.forward(height)
-        turtle.left(90)
-    turtle.end_fill()
+# 条件判断
+# 用户输入一个数字，判定这个数字是整数 负数 还是 0
+#num = input('Enter num: ')
+#num = int (num)
+#if num > 0:
+#    print('正数')
+#elif num < 0:
+#    print('负数')
+#else:
+#    print('num == 0')
 
-def draw_star(x,y,radius):
-    """绘制五角星"""
-    turtle.setpos(x,y)
-    pos1 = turtle.pos()
-    turtle.circle(-radius,72)
-    pos2 = turtle.pos()
-    turtle.circle(-radius,72)
-    pos3 = turtle.pos()
-    turtle.circle(-radius,72)
-    pos4 = turtle.pos()
-    turtle.circle(-radius,72)
-    pos5 = turtle.pos()
-    turtle.color('yellow', 'yellow')
-    turtle.begin_fill()
-    turtle.goto(pos3)
-    turtle.goto(pos1)
-    turtle.goto(pos4)
-    turtle.goto(pos2)
-    turtle.goto(pos5)
-    turtle.end_fill()
+#arr = []
+#for i in range(0,5):
+#    num = int (input('Enter num: '))
+#    arr.append(num)
+#sum = int (0)
+#for i in arr:
+#    sum = sum + i
+#avg = sum / 5
+#print(avg)
 
+# 参数字游戏
+#import random
+#
+#num = int (random.randint(0,100))
+#n = int (input('Entry num: '))
+#while(num != n):
+#    if(n > num):
+#        print('输入大了')
+#    else:
+#        print('输入小了')
+#    n = int (input('Entry num: '))
+#print('输出正确')
 
-def main():
-    """主程序"""
-    turtle.speed(12)
-    turtle.penup()
-    x, y = -270, -180
-    # 画国旗主题
-    width, height = 540, 360
-    draw_rectange(x, y, width, height)
-    # 画大星星
-    pice = 22
-    center_x, center_y = x+5*pice, y+height-pice*5
-    turtle.goto(center_x, center_y)
-    turtle.left(90)
-    turtle.forward(pice*3)
-    turtle.right(90)
-    draw_star(turtle.xcor(), turtle.ycor(),pice*3)
-    x_poses, y_poses = [10,12,12,10] , [2,4,7,9]
-    # 画小星星
-    for x_pos, y_pos in zip(x_poses, y_poses):
-        turtle.goto(x + x_pos * pice, y + height - y_pos * pice)
-        turtle.left(turtle.towards(center_x, center_y) - turtle.heading())
-        turtle.right(90)
-        draw_star(turtle.xcor(), turtle.ycor(), pice)
-    # 隐藏海龟
-    turtle.ht()
-    # 心事绘制窗口
-    turtle.mainloop()
+n = int (input('元素个数:'))
+arr = []
+sum = int (0)
+for i in range(0,n):
+    num = int (input('Entry num:'))
+    arr.append((num))
+    sum = sum + num
 
-if __name__ == '__main__':
-    main()
+case = input('1.元素和 2.平均值  (x) 退出')
+if(case == '1'):
+    print('和为: %d' % sum)
+elif(case == '2'):
+    print('平均值为: %f' % (sum/n))
+elif(case == 'x'):
+    print('退出')
+else:
+    print('input wrong')
+
+# 绘制五行红旗
+#import turtle
+#
+#def draw_rectange(x,y,width,height):
+#    '''绘制矩形'''
+#    turtle.goto(x,y)
+#    turtle.pencolor('red')
+#    turtle.fillcolor('red')
+#    turtle.begin_fill()
+#    for i in range(2):
+#        turtle.forward(width)
+#        turtle.left(90)
+#        turtle.forward(height)
+#        turtle.left(90)
+#    turtle.end_fill()
+#
+#def draw_star(x,y,radius):
+#    """绘制五角星"""
+#    turtle.setpos(x,y)
+#    pos1 = turtle.pos()
+#    turtle.circle(-radius,72)
+#    pos2 = turtle.pos()
+#    turtle.circle(-radius,72)
+#    pos3 = turtle.pos()
+#    turtle.circle(-radius,72)
+#    pos4 = turtle.pos()
+#    turtle.circle(-radius,72)
+#    pos5 = turtle.pos()
+#    turtle.color('yellow', 'yellow')
+#    turtle.begin_fill()
+#    turtle.goto(pos3)
+#    turtle.goto(pos1)
+#    turtle.goto(pos4)
+#    turtle.goto(pos2)
+#    turtle.goto(pos5)
+#    turtle.end_fill()
+#
+#
+#def main():
+#    """主程序"""
+#    turtle.speed(12)
+#    turtle.penup()
+#    x, y = -270, -180
+#    # 画国旗主题
+#    width, height = 540, 360
+#    draw_rectange(x, y, width, height)
+#    # 画大星星
+#    pice = 22
+#    center_x, center_y = x+5*pice, y+height-pice*5
+#    turtle.goto(center_x, center_y)
+#    turtle.left(90)
+#    turtle.forward(pice*3)
+#    turtle.right(90)
+#    draw_star(turtle.xcor(), turtle.ycor(),pice*3)
+#    x_poses, y_poses = [10,12,12,10] , [2,4,7,9]
+#    # 画小星星
+#    for x_pos, y_pos in zip(x_poses, y_poses):
+#        turtle.goto(x + x_pos * pice, y + height - y_pos * pice)
+#        turtle.left(turtle.towards(center_x, center_y) - turtle.heading())
+#        turtle.right(90)
+#        draw_star(turtle.xcor(), turtle.ycor(), pice)
+#    # 隐藏海龟
+#    turtle.ht()
+#    # 心事绘制窗口
+#    turtle.mainloop()
+#
+#if __name__ == '__main__':
+#    main()
 
 
