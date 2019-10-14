@@ -31,7 +31,7 @@
 
 
 # 输出 乘法口诀表
-#for i in range(1,9):
+# for i in range(1,9):
 #   for j in range(1,i+1):
 #      print('%d * %d = %d' % (j,i,j*i), end='\t');
 #   print();
@@ -48,4 +48,23 @@
 #         break
 # print(flag)
 
+# 输入两个正整数，计算他们的最大公约数和最小公倍数
 
+# x = int(input('x = '))
+# y = int(input('y = '))
+# if x > y:
+#     x, y = y, x
+# for factor in range(x, 0, -1):
+#     if x % factor == 0 and y % factor == 0:
+#         print('%d和%d最大公约数是%d' % (x, y, factor))
+#         print('%d和%d最小公倍数是%d' % (x, y, x * y // factor))
+#         break
+# 
+
+row = int(input('row = '))
+for i in range(0,row+1):
+    print('i = %d' % i)
+    for j in range(0, i+i):
+        print('j = %d' % j)
+        print('*', end='')
+    print()
