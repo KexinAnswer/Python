@@ -74,22 +74,69 @@
 
 # 斐波那契数列
 
-def Feb(num):
-    if num == 1 or num == 2:
-        return 1
-    a = 1
-    b = 1
-    c = 2
-    i = 3
-    while i <= num:
-        c = a + b
-        a = b
-        b = c
-        i = i + 1
-    print(c)
-    return c
+# def Feb(num):
+#     if num == 1 or num == 2:
+#         return 1
+#     a = 1
+#     b = 1
+#     c = 2
+#     i = 3
+#     while i <= num:
+#         c = a + b
+#         a = b
+#         b = c
+#         i = i + 1
+#     print('c = %d' % c)
+#     return c
+#
+# num = int(input('请输入一个正整数'))
+# print(num)
+# res = Feb(num)
+# print(res)
 
-num = int(input('请输入一个正整数'))
-print(num)
-res = Feb(num)
-print(res)
+# n = int(input('请输入一个正整数:'))
+# if n <= 2:
+#     print('num = 1')
+# else:
+#     i = 3
+#     a = 1
+#     b = 1
+#     c = a + b
+#     while i <= n:
+#         c = a + b
+#         a = b
+#         b = c
+#         i = i + 1
+#     print('num = %d' % c)
+
+
+# 输出 100 以内素数
+
+# def isPrime(num):
+#     #print(int(num ** 0.5))
+#     for i in range(2, int(num ** 0.5)+1, 1):
+#         if num % i == 0:
+#             return -1
+#     return 1
+#
+# for i in range(100):
+#     if isPrime(i) == 1:
+#         print(i)
+
+# 找出 10000 以内的完美
+
+def perfectNum(num):
+    sum = 0
+    for i in range(1, num):
+        if num % i == 0:
+            sum += i
+
+    if sum == num:
+        return sum
+    else:
+        return -1
+
+for i in range(2,10001):
+    if perfectNum(i) > 0:
+        print(i)
+
